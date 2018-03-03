@@ -12,17 +12,17 @@ cargo run --release
 
 ## Configuration
 
-The following values need to be configured as environment variables (or in a `.env` file).
+The following values need to be configured as environment variables (or in a `.env` file), with defaults shown.
 
 ```
-TMP_DIR
+TMP_DIR = tmp
 GIT_AUTHOR
 GIT_EMAIL
 SSH_KEY_PATH
 SRC_URL
-SRC_BRANCH
+SRC_BRANCH = master
 DST_URL
-DST_BRANCH
+DST_BRANCH = gh-pages
 ```
 
 The webhook server can be configured with a `Rocket.toml` file:
@@ -33,7 +33,7 @@ address = "0.0.0.0"
 port = 8081
 ```
 
-### Should I use this?
+## Should I use this?
 
 Probably not, there are more mature solutions available (e.g. https://github.com/drdoctr/doctr)
 that allow a much greater level of configuration, this mainly exists to experiment with the Rust

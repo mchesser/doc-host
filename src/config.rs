@@ -35,11 +35,11 @@ impl Config {
             },
             src: GitSource {
                 url: env::var("SRC_URL").expect("`SRC_URL` not set"),
-                branch: env::var("SRC_BRANCH").expect("`SRC_BRANCH` not set"),
+                branch: env::var("SRC_BRANCH").unwrap_or_else(|_| "master".into()),
             },
             dst: GitSource {
                 url: env::var("DST_URL").expect("`DST_URL` not set"),
-                branch: env::var("DST_BRANCH").expect("`DST_BRANCH` not set"),
+                branch: env::var("DST_BRANCH").unwrap_or_else(|_| "gh-pages".into()),
             }
         }
     }
