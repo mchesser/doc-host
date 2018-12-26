@@ -9,7 +9,7 @@ use mdbook::MDBook;
 use config::Config;
 
 pub fn update_book(config: &Config) -> Result<(), Box<Error>> {
-    build_book(&config.tmp_dir.join("dst"))?;
+    build_book(&config.tmp_dir.join("src"))?;
 
     let src_path = config.tmp_dir.join("src").join("book");
     let dst_path = config.tmp_dir.join("dst").join("book");
